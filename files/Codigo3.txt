@@ -1,0 +1,38 @@
+program main;
+
+const
+    z = 34;
+var
+    {Aqui se definen las variables}
+    variableString:string;
+    variableEntera, a, b:integer;
+    variableDecimal:real;
+    i:integer;
+
+begin
+
+    variableString:= 'don''t';
+    variableEntera:= 21; 
+    variableDecimal:= 1.0e-3; (* Comentario *)
+    
+    a:= 7;
+    b:= 5;
+    
+    for i:=0 to 10 do
+        begin
+            if (i mod 2 = 0) then
+                begin
+                    writeln(compiladores);
+                end;
+            else
+                begin
+                    writeln('impar: ');
+                end;
+        end;    
+    
+    
+    writeln('Hello, world!');    
+    writeln(a+b);
+  
+    
+end.

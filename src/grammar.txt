@@ -1,0 +1,29 @@
+VarBlock -> var VarList  |  3
+VarList -> VarDecl : Type ; VarList|3
+VarDecl -> id | id, VarDecl
+Program -> program id; ConstBlock VarBlock MainCode
+MainCode -> begin StatementList end.
+ConstBlock -> const ConstList  |  3
+ConstList -> id := Value; ConstList | 3
+Type -> real | integer | string ###done
+StatementList -> Statement StatementList'
+StatementList' -> 3 | StatementList
+Statement -> Assign | ForStatement | IfStatement | Write | WriteLn | break | continue
+ForStatement -> for id := Value To Expr do begin StatementList end ;
+IfStatement -> if ( Expr ) then begin StatementList end ; else begin StatementList end ;
+Assign -> id ASIG Expr PYCOM
+Expr -> Expr2 Expr'
+Expr' -> 3 | BooleanOp Expr2 Expr'
+Expr2 -> Expr3 Expr2'
+Expr2' -> 3 | RelOp Expr3 Expr2'
+Expr3 -> Term Expr3'
+Expr3' -> 3 | RESTA Term Expr3' | SUMA Term Expr3'
+Term -> Factor Term'
+Term' -> 3 | DIVI Factor Term' | MOD Factor Term' | MULTI Factor Term'
+Factor -> ( Expr ) | Value | id
+RelOp -> EQ | MAYOR | MAYOREQ | MENOR | MENOREQ | NQ
+BooleanOp -> AND | OR
+WriteLn -> writeln ( Expr )
+Write -> write ( Expr )
+To -> downto | to
+Value -> numero | str
