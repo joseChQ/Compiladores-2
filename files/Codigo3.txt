@@ -23,7 +23,7 @@ begin
             if (i mod 2 = 0) then
                 begin
                     writeln(compiladores);
-                end;
+                end
             else
                 begin
                     writeln('impar: ');

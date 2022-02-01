@@ -64,9 +64,10 @@ def main():
 	#	print("<",token[0],",",token[1],">")
 
 	asignToken(analizador.tokens)
-	print (Parse1())
-	printRoot1()
+	if(Parse1()):
+		printRoot1()
+		print ("successful")
 	current_token = get_token()
-	print("last_tokeen", current_token)
+	#print("last_tokeen", current_token)
 
 main()
