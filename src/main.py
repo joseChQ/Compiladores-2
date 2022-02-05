@@ -28,11 +28,27 @@ def imprimir_errores(tokens):
 					if token_error[1] == token_actual:
 						pos_error = len(codigo_error) + len(token_actual) // 2 
 					codigo_error += token_error[1] + ' '
+			temporal2 = ''
+			for c in codigo_error:
+				if c =='@':
+					temporal2+=' '
+				else:
+					temporal2+=c
 			print(temporal)
-			print("\t" + codigo_error)
+			print("\t" + temporal2)
 			print("\t" + ' ' * pos_error + "^")
 			ok = True
 	return ok
+
+def tokensWithOutErrors(tokens):
+	ok = False
+	tmp = []
+	for token in tokens:
+		
+		if (token[0] != "ERROR"):
+			tmp.append(token)				
+
+	return tmp
 
 def leer_archivo(nombre_archivo):
 	super_string = ""
@@ -59,14 +75,19 @@ def main():
 	analizador = Analizador_Lexico()
 	analizador.procesar(super_string)
 	errores_lexicos = imprimir_errores(analizador.tokens)
-
+	tokens_with_out_error = tokensWithOutErrors(analizador.tokens)
 	#for token in analizador.tokens:
 	#	print("<",token[0],",",token[1],">")
 
-	asignToken(analizador.tokens)
+	asignToken(tokens_with_out_error)
+	#print(tokens_with_out_error)
 	if(Parse1()):
-		printRoot1()
+		#printRoot1()
 		print ("successful")
+	else:
+		printError()
+	#print(tokens_with_out_error)
+	#printRoot1()
 	current_token = get_token()
 	#print("last_tokeen", current_token)
 

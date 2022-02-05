@@ -1,38 +1,48 @@
-program main;
+{
+program test1;
+begin
+    write('Hello World!!');
+end.
+}
 
-const
-    z = 34;
+{
+program Test1error;
+begin
+    write('Hello World!!')
+end
+}
+
+{
+program Test2;
+const num1 := 11;
+      num2 := 27; 
+var  sum : integer;
+
+begin 
+    sum := num1 + num2; 
+    writeln(sum);
+end.
+}
+
+
+program Test4error;
 var
-    {Aqui se definen las variables}
-    variableString:string;
-    variableEntera, a, b:integer;
-    variableDecimal:real;
-    i:integer;
+   age : integer;
 
 begin
-
-    variableString:= 'don''t';
-    variableEntera:= 21; 
-    variableDecimal:= 1.0e-3; (* Comentario *)
-    
-    a:= 7;
-    b:= 5;
-    
-    for i:=0 to 10 do
+    age := 0
+    if (age < 1) then:
         begin
-            if (i mod 2 = 0) then
+            writeln('Age cannot be less than 1...')
+            age := 100
+        end;
+    else
+        begin 
+            if (age >= 100) then
                 begin
-                    writeln(compiladores);
-                end;
-            else
-                begin
-                    writeln('impar: ');
-                end;
-        end;    
-    
-    
-    writeln('Hello, world!');    
-    writeln(a+b);
-  
-    
+                writeln('Age cannot be equal or greater than 100...');
+                age := age _ 20 - 30 
+            end;
+    end
+    write(age)
 end.
