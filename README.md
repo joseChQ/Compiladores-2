@@ -9,13 +9,8 @@ python main.py
 
 Se le pedirá que ingrese el nombre del archivo, que puede escoger entre:
 * Codigo3 
-* Codigo3Error
 
-El resultado sera la generación del arbol
-# Ejemplo sin errores
 
-<img src="https://user-images.githubusercontent.com/63762044/151975436-b2cd53f7-8f53-4c11-8e23-799577fd2c17.PNG" width="500">
+# Ejemplo con recuperación de errores
 
-# Ejemplo con errores
-
-<img src="https://user-images.githubusercontent.com/63762044/151975953-e98a4e19-85ba-475d-b0aa-3c069d0b3951.PNG" width="500">
+<img src="https://user-images.githubusercontent.com/63762044/152663065-4649a43b-f888-4c21-825b-c00f8bb71ed1.PNG" width="500">
